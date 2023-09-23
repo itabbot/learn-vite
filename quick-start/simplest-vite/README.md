@@ -67,5 +67,5 @@ dist/assets/index-aa676a50.js        1.45 kB │ gzip: 0.74 kB
 
 ## 2. 理解
 
-1. 以 `index.html` 作为入口文件，Vite 解析其 `<script type="module" src="...">` 标签指向 JavaScript 源码 `./src/main.ts`。
+1. 以 `index.html` 作为入口文件，Vite 解析其 `<script type="module" src="...">` 标签指向源码 `./src/main.ts`。
 2. 在 `./src/main.ts` 中引入各类资源，并挂载在 `#app` 元素之上。
