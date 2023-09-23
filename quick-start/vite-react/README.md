@@ -1,27 +1,66 @@
-# React + TypeScript + Vite
+# 使用官方脚手架创建一个 Vite + React 项目
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. 步骤
 
-Currently, two official plugins are available:
+1. 执行脚手架命令：
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```shell
+$ npm create vite@latest
 
-## Expanding the ESLint configuration
+✔ Project name: … vite-react
+✔ Select a framework: › React
+✔ Select a variant: › TypeScript
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Scaffolding project in /xxx/vite-react...
 
-- Configure the top-level `parserOptions` property like this:
+Done. Now run:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+  cd vite-react
+  npm install
+  npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. 安装依赖
+
+```shell
+$ cd vite-react
+$ npm install
+```
+
+3. 启动开发
+
+```shell
+$ npm run dev
+
+> vite-react@0.0.0 dev
+> vite
+
+  VITE v4.4.9  ready in 218 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+```
+
+4. 执行构建
+
+```shell
+$ npm run build
+
+> vite-react@0.0.0 build
+> tsc && vite build
+
+vite v4.4.9 building for production...
+✓ 34 modules transformed.
+dist/index.html                   0.46 kB │ gzip:  0.30 kB
+dist/assets/react-35ef61ed.svg    4.13 kB │ gzip:  2.14 kB
+dist/assets/index-d526a0c5.css    1.42 kB │ gzip:  0.74 kB
+dist/assets/index-c7e05d32.js   143.41 kB │ gzip: 46.10 kB
+✓ built in 454ms
+```
+
+## 2. 理解
+
+1. 以 `index.html` 作为入口文件，Vite 解析其 `<script type="module" src="...">` 标签指向源码 `./src/main.tsx`。
+2. 在 `./src/main.tsx` 中引入各类资源，渲染 React 组件并挂载在 `#root` 元素之上。
+3. 在 `./vite.config.ts` 中配置 React 插件以让 Vite 支持 React 语法。
