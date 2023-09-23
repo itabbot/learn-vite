@@ -48,6 +48,23 @@ $ npm run dev
   ➜  press h to show help
 ```
 
+4. 执行构建
+
+```shell
+$ npm run build
+
+> simplest-vite@0.0.0 build
+> tsc && vite build
+
+vite v4.4.9 building for production...
+✓ 7 modules transformed.
+dist/index.html                      0.45 kB │ gzip: 0.29 kB
+dist/assets/typescript-f6ead1af.svg  1.44 kB │ gzip: 0.84 kB
+dist/assets/index-3443e464.css       1.24 kB │ gzip: 0.64 kB
+dist/assets/index-aa676a50.js        1.45 kB │ gzip: 0.74 kB
+✓ built in 73ms
+```
+
 ## 2. 理解
 
 1. 以 `index.html` 作为入口文件，Vite 解析其 `<script type="module" src="...">` 标签指向 JavaScript 源码 `./src/main.ts`。
